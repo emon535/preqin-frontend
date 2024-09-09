@@ -1,4 +1,4 @@
-type Commitment = {
+export type Commitment = {
     asset_class: string;
     amount: number;
     currency: string;
