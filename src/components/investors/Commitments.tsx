@@ -1,4 +1,3 @@
-// components/Commitments.tsx
 import React, { useState } from "react";
 import { formatNumber } from "../../utils/formatNumber";
 import { Commitment } from "../../types/investorType";

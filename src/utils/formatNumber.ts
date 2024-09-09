@@ -1,4 +1,4 @@
-// utils/formatNumber.ts
+
 export const formatNumber = (num: number | string): string => {
     if (typeof num === 'string') {
       num = parseFloat(num);

@@ -1,4 +1,4 @@
-// features/investors/investorSlice.ts
+
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { fetchInvestors as fetchInvestorsApi, fetchInvestorById as fetchInvestorByIdApi } from '../../services/investorApi';
 import { InvestorType, InvestorDetailsType, InvestorStateType } from '../../types/investorType';
