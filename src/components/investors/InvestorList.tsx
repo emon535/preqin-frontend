@@ -1,14 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../../store/store";
+import { AppDispatch } from "../../store/store";
 import { fetchInvestors } from "../../features/investors/investorSlice";
 import InvestorListItem from "./InvestorListItem";
+import {
+  selectInvestorError,
+  selectInvestorStatus,
+  selectInvestors,
+} from "../../features/investors/investorSelectors";
 
 const InvestorList: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const investors = useSelector((state: RootState) => state.investors.list);
-  const status = useSelector((state: RootState) => state.investors.status);
-  const error = useSelector((state: RootState) => state.investors.error);
+  const investors = useSelector(selectInvestors);
+  const status = useSelector(selectInvestorStatus);
+  const error = useSelector(selectInvestorError);
 
   useEffect(() => {
     if (status === "idle") {

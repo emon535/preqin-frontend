@@ -8,6 +8,7 @@ import {
   selectInvestorStatus,
   selectInvestorError,
 } from "../../features/investors/investorSelectors";
+import { formatNumber } from "../../utils/formatNumber";
 
 const InvestorDetail: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -138,6 +139,9 @@ const InvestorDetail: React.FC = () => {
             }`}
           >
             {assetClass}
+            <p className="text-lg font-bold">
+              £{formatNumber(assetClassTotals[assetClass])}
+            </p>
           </button>
         ))}
       </div>
@@ -179,7 +183,7 @@ const InvestorDetail: React.FC = () => {
                   {commitment.asset_class}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {commitment.amount.toLocaleString()}
+                  £{formatNumber(commitment.amount)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {commitment.currency}
