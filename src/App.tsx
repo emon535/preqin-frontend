@@ -1,15 +1,13 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="content">
-      <section className="border-2 w-96 bg-slate-400 grid-cols-4">
-        <h1 className="text-3xl font-bold underline">
-          Hello, Tailwind CSS in React!
-        </h1>
-      </section>
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
-}
+};
 
 export default App;
